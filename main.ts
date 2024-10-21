@@ -270,14 +270,7 @@ namespace mecanumRobotV2 {
 
     let LpulseTime: number = 0;
     let HpulseTime: number = 0;
-    //let pulse9ms: boolean = false;
-    //let pulse4ms: boolean = false;
-    //This variable will become true when the pulse is repeated
-    //let repeatedPulse: boolean = false;
 
-    /**
-     * initialize the IR receiver function
-     */
     function irInit(IR_pin: DigitalPin) {
         pins.onPulsed(IR_pin, PulseValue.Low, () => {      //interrupt event
             LpulseTime = pins.pulseDuration();             //measure the pulse
@@ -304,12 +297,7 @@ namespace mecanumRobotV2 {
             }
         });
     }
-    /**
-    * Convert the pulse into data function
-    * author: jieliang mo
-    * github:https://github.com/mworkfun
-    * Write the date: 2020-6-19
-    */
+
     function irDataProcessing() {
         let tempAddress: number = 0;
         let inverseAddress: number = 0;
@@ -352,12 +340,7 @@ namespace mecanumRobotV2 {
         IR_R.address = 0;
         IR_R.command = 0;
     }
-    /**
-     * Connects to the IR receiver module at the specified pin.
-     * author: jieliang mo
-     * github:https://github.com/mworkfun
-     * Write the date: 2020-6-19
-     */
+
     //% blockId="infrared_connect"
     //% block="connect IR receiver at %IR_pin"
     //% IR_pin.fieldEditor="gridpicker"
@@ -369,12 +352,7 @@ namespace mecanumRobotV2 {
         pins.setPull(IR_R.IR_pin, PinPullMode.PullUp);
         irInit(IR_R.IR_pin);   //initialize the IR receiver
     }
-    /**
-     * Returns the command code of a specific IR button.
-     * author: jieliang mo
-     * github:https://github.com/mworkfun
-     * Write the date: 2020-6-19
-     */
+
     //% blockId=infrared_button
     //% button.fieldEditor="gridpicker"
     //% button.fieldOptions.columns=3
