@@ -355,13 +355,7 @@ namespace mecanumRobotV2 {
     export function irButton(button: IrButton): number {
         return button as number;
     }
-    /**
-     * Returns the code of the IR button that is currently pressed and 0 if no button is pressed.
-     * It is recommended to delay 110ms to read the data once
-     * author: jieliang mo
-     * github:https://github.com/mworkfun
-     * Write the date: 2020-6-19
-     */
+
     //% blockId=infrared_pressed_button
     //% block="IR button"
     //% group = "Sensors" weight=97
