@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "neopixel": "github:mworkfun/pxt-neopixel-bluetooth"
     },
     "files": [
         "main.blocks",
