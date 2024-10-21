@@ -85,9 +85,6 @@ namespace mecanumRobotV2 {
 
     }
 
-    /**
-     * set speed of motor
-     */
     //% block="Run $M motor $D at speed: $speed"
     //% speed.min=0 speed.max=100
     //% group="Motor"
@@ -366,7 +363,7 @@ namespace mecanumRobotV2 {
     //% IR_pin.fieldEditor="gridpicker"
     //% IR_pin.fieldOptions.columns=4
     //% IR_pin.fieldOptions.tooltips="false"
-    //% weight=99
+    //% group = "Sensors" weight=99
     export function connectInfrared(IR_pin: DigitalPin): void {
         IR_R.IR_pin = IR_pin;   //define IR receiver control pin
         pins.setPull(IR_R.IR_pin, PinPullMode.PullUp);
@@ -383,7 +380,7 @@ namespace mecanumRobotV2 {
     //% button.fieldOptions.columns=3
     //% button.fieldOptions.tooltips="false"
     //% block="IR button %button"
-    //% weight=98
+    //% group = "Sensors" weight=98
     export function irButton(button: IrButton): number {
         return button as number;
     }
@@ -396,7 +393,7 @@ namespace mecanumRobotV2 {
      */
     //% blockId=infrared_pressed_button
     //% block="IR button"
-    //% weight=97
+    //% group = "Sensors" weight=97
     export function returnIrButton(): number {
         irDataProcessing();
         basic.pause(80);      //Delay by one infrared receiving period
