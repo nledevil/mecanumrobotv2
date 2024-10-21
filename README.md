@@ -5,9 +5,9 @@ This is a combination of repositories into one extension with the addition of a 
 * [https://github.com/keyestudio2019/mecanum_robot_v2](https://github.com/keyestudio2019/mecanum_robot_v2)
 * [https://github.com/mworkfun/pxt-ir-remote](https://github.com/mworkfun/pxt-ir-remote)
 
-> Open this page at [https://nledevil.github.io/mecanumrobotv2/](https://nledevil.github.io/mecanumrobotv2/)
-
 ## Use as Extension
+
+> Open this page at [https://nledevil.github.io/mecanumrobotv2/](https://nledevil.github.io/mecanumrobotv2/)
 
 This repository can be added as an **extension** in MakeCode.
 
