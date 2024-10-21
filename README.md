@@ -1,5 +1,6 @@
 ## Keyestudio Micro:bit 4WD Mecanum Robot Car V2.0 - KS4034 
-This is a combination of repositories into one extension with the addition of a couple helper blocks.
+#### Created By Ryan Schultz
+This is a combination of repositories into one extension with the addition of a couple helper blocks. This is not sponsored by Keyestudio.
 
 ## Original Extensions:
 * [https://github.com/keyestudio2019/mecanum_robot_v2](https://github.com/keyestudio2019/mecanum_robot_v2)
