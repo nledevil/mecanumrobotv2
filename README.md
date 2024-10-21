@@ -2,8 +2,8 @@
 This is a combination of repositories into one extension with the addition of a couple helper blocks.
 
 ## Original Extensions:
-> [https://github.com/keyestudio2019/mecanum_robot_v2](https://github.com/keyestudio2019/mecanum_robot_v2)
-> [https://github.com/mworkfun/pxt-ir-remote](https://github.com/mworkfun/pxt-ir-remote)
+* [https://github.com/keyestudio2019/mecanum_robot_v2](https://github.com/keyestudio2019/mecanum_robot_v2)
+* [https://github.com/mworkfun/pxt-ir-remote](https://github.com/mworkfun/pxt-ir-remote)
 
 > Open this page at [https://nledevil.github.io/mecanumrobotv2/](https://nledevil.github.io/mecanumrobotv2/)
 
