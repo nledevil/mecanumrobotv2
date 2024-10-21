@@ -69,7 +69,7 @@ enum LEDState {
     OFF = 0
 }
 //% color="#AA278D" weight=100
-//% groups="['Motor', 'LED', 'Servo', 'Sensors']"
+//% groups="['Motors', '7-Color LED', 'Servo', 'Sensors']"
 namespace mecanumRobotV2 {
     export enum Servos {
         D14 = 14,
@@ -87,7 +87,7 @@ namespace mecanumRobotV2 {
 
     //% block="Run $M motor $D at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function ControlMotor(M: MotorLoc, D: MotorDir, speed: number) {
         let speed_value = Math.map(speed, 0, 100, 0, 255);
         if (M == 2 && D == 1) {
@@ -126,7 +126,7 @@ namespace mecanumRobotV2 {
 
     //% block="Drive Forward at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function DriveForward(speed: number) {
         ControlMotor(0, 0, speed);
         ControlMotor(1, 0, speed);
@@ -136,7 +136,7 @@ namespace mecanumRobotV2 {
 
     //% block="Drive Back at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function DriveBack(speed: number) {
         ControlMotor(0, 1, speed);
         ControlMotor(1, 1, speed);
@@ -146,7 +146,7 @@ namespace mecanumRobotV2 {
 
     //% block="Strafe Left at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function StrafeLeft(speed: number) {
         ControlMotor(0, 1, speed);
         ControlMotor(1, 0, speed);
@@ -156,7 +156,7 @@ namespace mecanumRobotV2 {
 
     //% block="Strafe Right at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function StrafeRight(speed: number) {
         ControlMotor(0, 0, speed);
         ControlMotor(1, 1, speed);
@@ -166,7 +166,7 @@ namespace mecanumRobotV2 {
 
     //% block="Rotate Right at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function RotateRight(speed: number) {
         ControlMotor(0, 0, speed);
         ControlMotor(1, 0, speed);
@@ -176,7 +176,7 @@ namespace mecanumRobotV2 {
 
     //% block="Rotate Left at speed: $speed"
     //% speed.min=0 speed.max=100
-    //% group="Motor"
+    //% group="Motors"
     export function RotateLeft(speed: number) {
         ControlMotor(0, 1, speed);
         ControlMotor(1, 1, speed);
@@ -184,8 +184,8 @@ namespace mecanumRobotV2 {
         ControlMotor(3, 0, speed);
     };
 
-    //% block="Stop Motors"
-    //% group="Motor"
+    //% block="Stop All Motors"
+    //% group="Motors"
     export function StopMotor() {
         //stop
         i2cWrite(0x30, 0x01, 0); //M1A
@@ -199,7 +199,7 @@ namespace mecanumRobotV2 {
     }
 
     //% block="Turn $LedC LED $LedS"
-    //% group="LED" weight=76
+    //% group="7-Color LED" weight=76
     export function setLed(LedC: LEDLoc, LedS: LEDState) {
         i2cWrite(0x30, LedC, LedS);
     }
@@ -212,7 +212,7 @@ namespace mecanumRobotV2 {
     }
 
     let lastTime = 0;
-    
+
     //% block="Ultrasonic Value"
     //% group="Sensors" weight=68
     export function ultra(): number {
@@ -246,7 +246,7 @@ namespace mecanumRobotV2 {
         command: number;
         IR_pin: DigitalPin;
     }
-    
+
     //create a IR receiver class
     let IR_R = new irReceiver;
 
