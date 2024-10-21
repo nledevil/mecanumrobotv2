@@ -198,9 +198,6 @@ namespace mecanumRobotV2 {
         i2cWrite(0x30, 0x08, 0); //M1B
     }
 
-    /**
-     * turn off all rgb-led
-     */
     //% block="Turn $LedC LED $LedS"
     //% group="LED" weight=76
     export function setLed(LedC: LEDLoc, LedS: LEDState) {
@@ -214,10 +211,8 @@ namespace mecanumRobotV2 {
         pins.servoWritePin(AnalogPin.P14, angle)
     }
 
-    /**
-     * Ultrasonic sensor
-     */
     let lastTime = 0;
+    
     //% block="Ultrasonic Value"
     //% group="Sensors" weight=68
     export function ultra(): number {
@@ -242,9 +237,6 @@ namespace mecanumRobotV2 {
         return Math.round(ret / 58);
     }
 
-    /**
-     * define a IR receiver class
-     */
     class irReceiver {
         constructor() {
             this.address = 0;
@@ -254,6 +246,7 @@ namespace mecanumRobotV2 {
         command: number;
         IR_pin: DigitalPin;
     }
+    
     //create a IR receiver class
     let IR_R = new irReceiver;
 
