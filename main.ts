@@ -68,6 +68,11 @@ enum LEDState {
     ON = 4095,
     OFF = 0
 }
+enum LineTrack {
+    Left,
+    Center,
+    Right
+}
 //% color="#AA278D" weight=100
 //% groups="['Motors', '7-Color LED', 'Servo', 'Sensors']"
 namespace mecanumRobotV2 {
@@ -363,5 +368,24 @@ namespace mecanumRobotV2 {
         irDataProcessing();
         basic.pause(80);      //Delay by one infrared receiving period
         return IR_R.command;
+    }
+
+    //% block="$LT_val LineTracking"
+    //% group="Sensors" weight=67
+    export function LineTracking(LT_val: LineTrack) {
+        let val = 0;
+        let lt = LT_val;
+        switch (lt) {
+            case LineTrack.Left:
+                val = pins.digitalReadPin(DigitalPin.P3);
+                break;
+            case LineTrack.Right:
+                val = pins.digitalReadPin(DigitalPin.P10);
+                break;
+            case LineTrack.Center:
+                val = pins.digitalReadPin(DigitalPin.P4);
+                break;
+        }
+        return val;
     }
 }
